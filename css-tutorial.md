@@ -401,9 +401,73 @@ background-size: cover;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+[วางโค้ดที่นี่]<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แกลเลอรีสินค้า</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>แกลเลอรีสินค้า</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item1.jpg" onclick="openModal(this)" alt="สินค้า 1">
+                <div class="card-content">
+                    <h3>หนังสือมายคราฟ</h3>
+                    <p>หนังสือที่ช่วยให้คุณเรียนรู้เทคนิคสร้างโลกมายคราฟสุดเจ๋ง</p>
+                    <p class="price">ราคา: 350 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item2.jpg" onclick="openModal(this)" alt="สินค้า 2">
+                <div class="card-content">
+                    <h3>หนังสือโปเกม่อน</h3>
+                    <p>สำรวจโลกของโปเกม่อนและค้นพบสัตว์ประหลาดสุดโปรดของคุณ</p>
+                    <p class="price">ราคา: 420 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item3.jpg" onclick="openModal(this)" alt="สินค้า 3">
+                <div class="card-content">
+                    <h3>หนังสือคุกกี้รัน</h3>
+                    <p>เรื่องราวสนุกๆ ของตัวละครจากเกมคุกกี้รันที่คุณชื่นชอบ</p>
+                    <p class="price">ราคา: 390 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item4.jpg" onclick="openModal(this)" alt="สินค้า 4">
+                <div class="card-content">
+                    <h3>หนังสือความรู้ทั่วไป</h3>
+                    <p>สาระน่ารู้เกี่ยวกับโลกที่เราอยู่ เหมาะสำหรับทุกวัย</p>
+                    <p class="price">ราคา: 299 บาท</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+    
+    <a href="#top" class="back-to-top">กลับด้านบน</a>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![image](https://github.com/user-attachments/assets/c90e2a33-ecf1-4303-985d-ec5857dc61e3)
+![image](https://github.com/user-attachments/assets/f8ca7c90-d854-4935-b999-a4d04cbc3d87)
 
 [](#การทดลองที่-4-การจัดการขนาดและระยะห่าง)
 ## การทดลองที่ 4: การจัดการขนาดและระยะห่าง
