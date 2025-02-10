@@ -563,12 +563,206 @@ border: 1px solid black;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+[วางโค้ด HTML ที่นี่]<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แกลเลอรีสินค้า</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>แกลเลอรีสินค้า</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item1.jpg" onclick="openModal(this)" alt="สินค้า 1">
+                <div class="card-content">
+                    <h3>หนังสือมายคราฟ</h3>
+                    <p>หนังสือที่ช่วยให้คุณเรียนรู้เทคนิคสร้างโลกมายคราฟสุดเจ๋ง</p>
+                    <p class="price">ราคา: 350 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item2.jpg" onclick="openModal(this)" alt="สินค้า 2">
+                <div class="card-content">
+                    <h3>หนังสือโปเกม่อน</h3>
+                    <p>สำรวจโลกของโปเกม่อนและค้นพบสัตว์ประหลาดสุดโปรดของคุณ</p>
+                    <p class="price">ราคา: 420 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item3.jpg" onclick="openModal(this)" alt="สินค้า 3">
+                <div class="card-content">
+                    <h3>หนังสือคุกกี้รัน</h3>
+                    <p>เรื่องราวสนุกๆ ของตัวละครจากเกมคุกกี้รันที่คุณชื่นชอบ</p>
+                    <p class="price">ราคา: 390 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item4.jpg" onclick="openModal(this)" alt="สินค้า 4">
+                <div class="card-content">
+                    <h3>หนังสือความรู้ทั่วไป</h3>
+                    <p>สาระน่ารู้เกี่ยวกับโลกที่เราอยู่ เหมาะสำหรับทุกวัย</p>
+                    <p class="price">ราคา: 299 บาท</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+    
+    <a href="#top" class="back-to-top">กลับด้านบน</a>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+[วางโค้ด CSS ที่นี่]body {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #63ff82;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #82c06d;
+    margin-bottom: 20px;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+
+.gallery-item {
+    width: 280px;
+}
+
+.card {
+    background: rgb(255, 139, 139);
+    border-radius: 12px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    border-bottom: 3px solid #ddd;
+    transition: opacity 0.3s;
+}
+
+.card img:hover {
+    opacity: 0.9;
+}
+
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #555;
+    margin: 8px 0;
+}
+
+
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal img {
+    max-width: 80%;
+    max-height: 75%;
+    border-radius: 10px;
+}
+
+/
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 35px;
+    color: rgb(229, 83, 83);
+    cursor: pointer;
+}
+
+
+.back-to-top {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #6ab2ff;
+}
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![image](https://github.com/user-attachments/assets/f17f6b04-f05d-4a0b-8516-d8e657b26b2a)
 
 [](#การทดลองที่-5-การจัดการข้อความและฟอนต์)
 ## การทดลองที่ 5: การจัดการข้อความและฟอนต์
