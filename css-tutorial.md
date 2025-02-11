@@ -1578,10 +1578,197 @@ h1 {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+[วางโค้ด HTML ที่นี่]<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery book shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>GALLEY BOOK SHOP</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item1.jpg" onclick="openModal(this)" alt="สินค้า 1">
+                <div class="card-content">
+                    <h3>หนังสือมายคราฟ</h3>
+                    <p>หนังสือที่ช่วยให้คุณเรียนรู้เทคนิคสร้างโลกมายคราฟสุดเจ๋ง</p>
+                    <p class="price">ราคา: 350 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item2.jpg" onclick="openModal(this)" alt="สินค้า 2">
+                <div class="card-content">
+                    <h3>หนังสือโปเกม่อน</h3>
+                    <p>สำรวจโลกของโปเกม่อนและค้นพบสัตว์ประหลาดสุดโปรดของคุณ</p>
+                    <p class="price">ราคา: 420 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item3.jpg" onclick="openModal(this)" alt="สินค้า 3">
+                <div class="card-content">
+                    <h3>หนังสือคุกกี้รัน</h3>
+                    <p>เรื่องราวสนุกๆ ของตัวละครจากเกมคุกกี้รันที่คุณชื่นชอบ</p>
+                    <p class="price">ราคา: 390 บาท</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <div class="card">
+                <img src="images/item4.jpg" onclick="openModal(this)" alt="สินค้า 4">
+                <div class="card-content">
+                    <h3>หนังสือความรู้ทั่วไป</h3>
+                    <p>สาระน่ารู้เกี่ยวกับโลกที่เราอยู่ เหมาะสำหรับทุกวัย</p>
+                    <p class="price">ราคา: 299 บาท</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-item">
+        <div class="card">
+            <img src="images/item5.jpg" onclick="openModal(this)" alt="สินค้า 5">
+            <div class="card-content">
+                <h3>หนังสือเกมteam fortess 2</h3>
+                <p>การต่อสู้ของเหล่าทหารรับจ้าง 9 นาย</p>
+                <p class="price">ราคา: 750 บาท</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+    
+    <a href="#top" class="back-to-top">กลับด้านบน</a>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
 ```
 ```css
 [วางโค้ด CSS ที่นี่]
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+    background-color: #e59498;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.gallery-item {
+    width: 220px;
+}
+
+.card {
+    background: #a3fdff;
+    border-radius: 10px;
+    border: 2px solid #ff5e5e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    border-bottom: 3px solid #c83333;
+    transition: opacity 0.3s, border 0.3s;
+}
+
+.card img:hover {
+    opacity: 0.9;
+}
+
+
+.card-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #E63946;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 85%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+
+.back-to-top {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: rgb(94, 3, 3);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
 ```
 [บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+![image](https://github.com/user-attachments/assets/ac1f39bd-15b7-4ec2-9572-142bd4f6acd6)
 
